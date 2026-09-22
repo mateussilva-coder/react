@@ -1,0 +1,27 @@
+*{
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+h1{
+  font-family: sans-serif;
+  font-size: 40px;
+  color:blue;
+  text-align: center;
+  margin: 20px 0 20px 0;
+}
+
+body{
+  padding-bottom: 500px;
+}
+
+.red-title{
+  font-size: 40px;
+  color: red;
+  background-color: white;
+}
+
+.title{
+  color:blue
+}
