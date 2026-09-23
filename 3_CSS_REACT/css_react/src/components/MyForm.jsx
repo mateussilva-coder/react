@@ -5,7 +5,7 @@ const MyForm = () => {
     <div>
         <form>
             <label htmlFor="name">Insira seu nome: </label>
-            <input type="text" name="name" placeholder="Insira seu nome..." value={"enviar"}/>
+            <input type="text" name="name" placeholder="Insira seu nome..."/>
         </form>
     </div>
   )
