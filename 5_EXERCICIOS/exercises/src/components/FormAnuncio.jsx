@@ -10,12 +10,12 @@ const FormAnuncio = ({onAdicionarImovel}) => {
 
     const handleTitulo = (e) => {
         setTitulo(e.target.value)
-        console.log(titulo)
+        
     }
 
     const handlePreco = (e) => {
         setPreco(e.target.value)
-        console.log(preco)
+        
     }
 
     const handleCanal = (e) => {
@@ -23,26 +23,46 @@ const FormAnuncio = ({onAdicionarImovel}) => {
     }
 
     const handleDestaque = (e) => {
-        setIsDestaque(!isDestaque)
+        setIsDestaque(e.target.checked)
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+
+        const newAnuncio = {
+            id: Date.now(),
+            titulo: titulo,
+            preco: preco,
+            canal: canal,
+            isDestaque: isDestaque,
+            leadsZap: 0
+        }
+
+        onAdicionarImovel(newAnuncio)
+
+        setTitulo("")
+        setPreco(0)
+        setCanal("VivaReal")
+        setIsDestaque(false)
     }
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
         <label htmlFor="titulo">Insira o titulo: </label>
-        <input type="text" name="titulo" id="titulo" onChange={handleTitulo}/>
+        <input type="text" name="titulo" id="titulo" value={titulo} onChange={handleTitulo}/>
 
         <label htmlFor="preco">Insira o preco: </label>
-        <input type="number" name='titulo' id='titulo' onChange={handlePreco}/>
+        <input type="number" name='preco' id='preco' value={preco} onChange={handlePreco}/>
 
-        <label>
-            <select onChange={handleCanal} value={canal}>
-                <option value="vivareal">VivaReal</option>
-                <option value="zap">zap</option>
+        <label htmlFor='canal'>Canal: </label>
+            <select onChange={handleCanal} value={canal} id='canal'>
+                <option value="VivaReal">VivaReal</option>
+                <option value="Zap">Zap</option>
             </select>
-        </label>
+        
 
         <label htmlFor="destaque">É destaque</label>
-        <input type="checkbox" name="destaque" id="destaque" onChange={handleDestaque}/>
+        <input type="checkbox" name="destaque" id="destaque" checked={isDestaque} onChange={handleDestaque}/>
 
         <input type="submit" value="Enviar"/>
     </form>

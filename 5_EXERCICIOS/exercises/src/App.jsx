@@ -1,9 +1,8 @@
 import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
 import './App.css'
 import FormAnuncio from './components/FormAnuncio'
+import CardImovel from './components/CardImovel'
+
 
 function App() {
 
@@ -45,12 +44,13 @@ const adicionarLead = (id) => {
 
   return (
     <div>
+        <h1>Gestão de Imóveis e Leads</h1>
 
-        <FormAnuncio/>
+        <FormAnuncio onAdicionarImovel={adicionarImovel}/>
 
       {imoveis.length === 0 ? (<p>Não há imóveis disponíveis</p>) : (
         imoveis.map(imovel => (
-          <p key={imovel.id}>Titulo: {imovel.titulo}, Preco: {imovel.preco} Canal: {imovel.canal}, Destaque: {imovel.isDestaque}, Leads: {imovel.leadsZap}</p>
+        <CardImovel key={imovel.id} imovel={imovel} onDeletar={deletarImovel} onAdicionarLead={adicionarLead}/>
         ))
       )}
     </div>
