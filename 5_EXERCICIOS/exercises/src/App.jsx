@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import './App.css'
-import FormAnuncio from './components/FormAnuncio'
-import CardImovel from './components/CardImovel'
+import FormAnuncio from './components/ex1/FormAnuncio'
+import CardImovel from './components/ex1/CardImovel'
+import FormVeiculo from './components/ex2/FormVeiculo'
+import ListaVeiculos from './components/ex2/ListaVeiculo'
 
 
 function App() {
@@ -42,6 +44,49 @@ const adicionarLead = (id) => {
   }))
 }
 
+const [veiculos, setVeiculos] = useState([
+  {
+    id: 1,
+    modelo: 'Honda Civic',
+    preco: 95000,
+    categoria: 'Sede',
+    status: 'Disponível'
+  },
+  {
+    id: 2,
+    modelo: 'Chevrolet Tracker',
+    preco: 110000,
+    categoria: 'SUV',
+    status: 'Vendido'
+  }
+])
+
+const adicionarVeiculo = (novoVeiculo) => {
+  setVeiculos((prev) => [...prev, novoVeiculo])
+}
+
+const toggleStatus = (id) => {
+  setVeiculos((prev) => prev.map(veiculo => {
+    if(veiculo.id === id){
+      return {...veiculo, status: veiculo.status === "Disponível" ? "Vendido" : "Disponível"}
+    }
+    return veiculo
+  }))
+}
+
+const aplicarDesconto = (id) => {
+  setVeiculos((prev) => prev.map(veiculo => {
+    if(veiculo.id === id){
+      return {...veiculo, preco: veiculo.preco * 0.9}
+    }
+    return veiculo
+  }))
+}
+
+const deletarVeiculo = (id) => {
+  setVeiculos((prev) => prev.filter(veiculo => veiculo.id !== id))
+}
+
   return (
     <div>
         <h1>Gestão de Imóveis e Leads</h1>
@@ -53,7 +98,26 @@ const adicionarLead = (id) => {
         <CardImovel key={imovel.id} imovel={imovel} onDeletar={deletarImovel} onAdicionarLead={adicionarLead}/>
         ))
       )}
-    </div>
+
+      <hr />
+
+      <FormVeiculo onAdicionarVeiculo={adicionarVeiculo}/>
+
+      <h1>🏎️ Gestor de Carros</h1>
+      
+      {/* 1. Formulário para Cadastrar */}
+      <FormVeiculo onAdicionarVeiculo={adicionarVeiculo} />
+
+      <hr style={{ margin: '20px 0' }} />
+
+      {/* 2. Lista para Exibir e Interagir */}
+      <ListaVeiculos 
+        veiculos={veiculos} 
+        onToggleStatus={toggleStatus} 
+        onAplicarDesconto={aplicarDesconto} 
+        onDeletar={deletarVeiculo} 
+      />
+    </div> 
   )
 }
 
