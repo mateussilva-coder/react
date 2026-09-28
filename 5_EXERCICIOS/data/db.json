@@ -1,0 +1,13 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "PlayStation 5",
+      "price": "3500",
+      "category": "Eletrônicos",
+      "condition": "Usado",
+      "description": "Acompanha 2 controles e 3 jogos.",
+      "imageUrl": "https://picsum.photos/300/200"
+    }
+  ]
+}

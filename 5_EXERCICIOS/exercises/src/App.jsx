@@ -4,6 +4,10 @@ import FormAnuncio from './components/ex1/FormAnuncio'
 import CardImovel from './components/ex1/CardImovel'
 import FormVeiculo from './components/ex2/FormVeiculo'
 import ListaVeiculos from './components/ex2/ListaVeiculo'
+import { useFetch } from './components/ex3/hooks/UseFetch'
+
+const url = "http://localhost:3000/products"
+
 
 
 function App() {
@@ -87,8 +91,7 @@ const deletarVeiculo = (id) => {
   setVeiculos((prev) => prev.filter(veiculo => veiculo.id !== id))
 }
 
-  return (
-    <div>
+      {/*
         <h1>Gestão de Imóveis e Leads</h1>
 
         <FormAnuncio onAdicionarImovel={adicionarImovel}/>
@@ -103,20 +106,33 @@ const deletarVeiculo = (id) => {
 
       <FormVeiculo onAdicionarVeiculo={adicionarVeiculo}/>
 
-      <h1>🏎️ Gestor de Carros</h1>
+      <h1>🏎️ Gestor de Carros </h1>
       
-      {/* 1. Formulário para Cadastrar */}
+     
       <FormVeiculo onAdicionarVeiculo={adicionarVeiculo} />
 
       <hr style={{ margin: '20px 0' }} />
 
-      {/* 2. Lista para Exibir e Interagir */}
+     
       <ListaVeiculos 
         veiculos={veiculos} 
         onToggleStatus={toggleStatus} 
         onAplicarDesconto={aplicarDesconto} 
         onDeletar={deletarVeiculo} 
       />
+
+      <hr/>      
+      */}
+
+  const {data: products} = useFetch(url)
+
+  return (
+    <div>
+
+      {products && products.map(product => (
+        <li key={product.id}> Nome: {product.name} - Preco: {product.price}</li>
+      ))}
+
     </div> 
   )
 }

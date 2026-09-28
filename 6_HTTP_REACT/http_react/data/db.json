@@ -1,24 +1,30 @@
 {
-    "products": [
-        {
-            "name": "cadeira",
-            "price": 130,
-            "id": 1
-        },
-        {
-            "name": "capa de chuva",
-            "price": 50,
-            "id": 2
-        },
-        {
-            "name": "teclado",
-            "price": 140,
-            "id": 3
-        },
-        {
-            "name": "teclado",
-            "price": 140,
-            "id": 4
-        }
-    ]
+  "products": [
+    {
+      "name": "cadeira",
+      "price": 130,
+      "id": "1"
+    },
+    {
+      "name": "capa de chuva",
+      "price": 50,
+      "id": "2"
+    },
+    {
+      "name": "teclado",
+      "price": 140,
+      "id": "3"
+    },
+    {
+      "name": "teclado",
+      "price": 140,
+      "id": "4"
+    },
+    {
+      "name": "Mesa",
+      "price": "140",
+      "id": "aoYGj8zjBbo"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
