@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 
-const UseFetch = (url) => {
+export const useFetch = (url) => {
 
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true)
@@ -41,5 +41,17 @@ const UseFetch = (url) => {
         setLoading(false)
     }
 
-    return {data, loading, postData, deleteData}
+    const updateData = async (id, updatedItem) => {
+        setLoading(true)
+        const res = await fetch(`${url}/${id}`,{
+            method: 'PUT',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(updatedItem)
+        })
+        const updatedData = await res.json()
+        setData((prevData) => prevData.map(item => item.id === id ? updatedData : item))
+        setLoading(false)
+    }
+
+    return {data, loading, postData, deleteData, updateData}
 }

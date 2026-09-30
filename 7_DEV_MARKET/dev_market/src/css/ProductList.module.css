@@ -1,0 +1,46 @@
+.listContainer{
+    width: 100%;
+    border: 1px solid #ccc;
+    gap: 10px;
+    border-radius: 8px;
+    margin: 0 auto;
+}
+
+.listContainer h2{
+    color: #ccc;
+    font-weight: bold;
+    font-size: 30px;
+    text-decoration: underline;
+}
+
+.grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 4px;
+}
+
+.card{
+    width: 31.5%;
+    min-width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 6px;
+}
+
+.deleteBtn{
+    border: none;
+    border-radius: 6px;
+    background-color: #FF7F50;
+    padding: 6px 6px;
+    cursor: pointer;
+    margin-right: 4px;
+}
+
+.updateBtn{
+    border: none;
+    border-radius: 6px;
+    background-color: #90EE90;
+    padding: 6px 6px;
+    cursor: pointer;
+}

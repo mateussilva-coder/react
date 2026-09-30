@@ -1,0 +1,57 @@
+.formContainer{
+    min-width: 200px;
+    max-width: 450px;
+    padding: 16px;
+    margin: 40px auto;
+    background-color: #f3f3f3;
+    border: 1px solid #0056b3;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.formControl{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input{
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+
+/*Copiei para tirar as setinhas do number =) */
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.checkboxGroup label{
+    display: flex;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
