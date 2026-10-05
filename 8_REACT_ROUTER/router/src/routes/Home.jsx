@@ -1,0 +1,27 @@
+import React from 'react'
+import { useFetch } from '../hooks/UseFetch'
+import { Link } from 'react-router-dom'
+
+const Home = () => {
+
+    const url = "http://localhost:3000/products"
+
+    const { data: itens } = useFetch(url)
+
+    return (
+        <div>
+            <h1>Home</h1>
+            <ul className="products">
+                {itens && itens.map(item => (
+                    <li key={item.id}>
+                        <h2>{item.name}</h2>
+                        <p>{item.price}</p>
+                        <Link to={`/products/${item.id}`}>Detalhes</Link>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    )
+}
+
+export default Home
