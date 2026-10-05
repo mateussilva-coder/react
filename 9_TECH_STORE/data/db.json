@@ -1,0 +1,60 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Mouse Gamer RGB 12000 DPI",
+      "price": 149.90,
+      "category": "Periféricos",
+      "description": "Mouse ergonômico com 6 botões programáveis e sensor óptico de alta precisão.",
+      "stock": 15,
+      "specs": {
+        "brand": "TechBrand",
+        "warranty": "12 meses",
+        "weight": "85g",
+        "connectivity": "USB C / Sem fio"
+      }
+    },
+    {
+      "id": "2",
+      "name": "Teclado Mecânico Switches Red",
+      "price": 299.00,
+      "category": "Periféricos",
+      "description": "Teclado mecânico ABNT2 compacto com switches macios e iluminação LED.",
+      "stock": 8,
+      "specs": {
+        "brand": "KeyMaster",
+        "warranty": "24 meses",
+        "weight": "750g",
+        "connectivity": "Cabo trançado USB"
+      }
+    },
+    {
+      "id": "3",
+      "name": "Monitor Ultrawide 29'' IPS",
+      "price": 1199.90,
+      "category": "Monitores",
+      "description": "Painel IPS com 75Hz de taxa de atualização, tempo de resposta de 1ms e HDR.",
+      "stock": 5,
+      "specs": {
+        "brand": "ViewSonic",
+        "warranty": "12 meses",
+        "resolution": "2560x1080",
+        "connectivity": "2x HDMI, 1x DisplayPort"
+      }
+    },
+    {
+      "id": "4",
+      "name": "Headset Gamer 7.1 Surround",
+      "price": 349.50,
+      "category": "Áudio",
+      "description": "Isolamento acústico com espumas memory foam e microfone removível com cancelamento de ruído.",
+      "stock": 12,
+      "specs": {
+        "brand": "SoundPro",
+        "warranty": "12 meses",
+        "weight": "280g",
+        "connectivity": "P2 / Adaptador USB"
+      }
+    }
+  ]
+}

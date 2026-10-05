@@ -27,7 +27,7 @@ const ProductList = ({ products, deleteData, loading, onEditingProduct}) => {
 
     return (
         <div className={styles.listContainer}>
-            <h2>Seus Produtos</h2>
+            <h2 style={{textAlign: 'center'}}>Seus Produtos</h2>
             <div className={styles.grid}>
                 {products.map((product) => (
                     <div key={product.id} className={styles.card}>

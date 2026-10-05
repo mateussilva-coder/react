@@ -7,7 +7,7 @@ export const useFetch = (url) => {
   const [method, setMethod] = useState(null)
   const [callFetch, setCallFetch] = useState(null)
   const [loading, setLoading] = useState(false)
-  const [error, setErrorr] = (null)
+  const [error, setErrorr] = useState(null)
 
   // 1. Prepara a configuração do envio
   const httpConfig = (data, method) => {

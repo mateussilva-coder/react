@@ -4,6 +4,7 @@
     gap: 10px;
     border-radius: 8px;
     margin: 0 auto;
+    text-align: center;
 }
 
 .listContainer h2{
@@ -13,22 +14,19 @@
     text-decoration: underline;
 }
 
-.grid{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 4px;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
 }
 
-.card{
-    width: 31.5%;
-    min-width: 200px;
+.card {
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 6px;
 }
 
-.deleteBtn{
+.deleteBtn {
     border: none;
     border-radius: 6px;
     background-color: #FF7F50;
@@ -37,7 +35,7 @@
     margin-right: 4px;
 }
 
-.updateBtn{
+.updateBtn {
     border: none;
     border-radius: 6px;
     background-color: #90EE90;

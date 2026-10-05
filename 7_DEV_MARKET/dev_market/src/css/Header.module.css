@@ -1,5 +1,12 @@
 .headerContainer{
+    padding: 20px;
+    height: 50px;
+    max-width: 100%;
     background-color: #ccc;
     color: #ffffff;
     text-align: center;
+}
+
+.headerContainer h1{
+    margin:  0 auto;
 }

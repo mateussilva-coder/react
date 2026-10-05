@@ -8,13 +8,6 @@
       "id": "spgPGv-bC78"
     },
     {
-      "name": "Teclado Gamer",
-      "price": 450,
-      "category": "Periféricos",
-      "condition": "Novo",
-      "id": "j28Mb-3JBes"
-    },
-    {
       "name": "MacBook pro",
       "price": 4500,
       "category": "Hardware",
@@ -27,6 +20,13 @@
       "category": "Periféricos",
       "condition": "Novo",
       "id": "rRG0xUPuIB8"
+    },
+    {
+      "name": "MacBook pro",
+      "price": 7000,
+      "category": "Periféricos",
+      "condition": "Novo",
+      "id": "ulRRtq-zCMw"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -15,7 +15,7 @@ const ProductForm = ({ postData, loading, editingProduct, onSetEditingProducts, 
             setName(editingProduct.name)
             setPrice(editingProduct.price)
             setCategory(editingProduct.category)
-            setIsNew(editingProduct.condition)
+            setIsNew(editingProduct.condition === "Novo")
         } else {
             setName('')
             setPrice('')
@@ -75,7 +75,7 @@ const ProductForm = ({ postData, loading, editingProduct, onSetEditingProducts, 
     return (
         <form onSubmit={handleSubmit} className={styles.formContainer}>
 
-            <h2>Cadastrar Produto</h2>
+            <h2>{editingProduct ? 'Atualizar Produto' : 'Cadastrar Produto'}</h2>
 
             <div className={styles.formControl}>
                 <label htmlFor="name">Insira o nome do produto:</label>
@@ -109,6 +109,12 @@ const ProductForm = ({ postData, loading, editingProduct, onSetEditingProducts, 
             <button type='submit' disabled={loading} className={styles.button}>
                 {loading ? 'Enviando...' : editingProduct ? 'Atualizar' : 'Salvar'}
             </button>
+
+            {editingProduct && (
+                <button type='button' onClick={() => onSetEditingProducts(null)} className={styles.eraseButton}>
+                    Apagar atualização
+                </button>
+            )}
 
         </form>
     )
